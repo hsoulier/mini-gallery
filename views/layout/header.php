@@ -14,15 +14,17 @@
 </head>
 
 <body class="min-h-screen">
-<nav class="bg-black text-white px-8 py-2 flex gap-4 text-2xl">
-    <div class="icon icon-back">
+<nav class="flex items-center text-2xl text-white px-8 py-2 flex gap-4 text-2xl">
+    <div class="p-2 text-center icon-back">
         <a href="javascript:history.go(-1)"><i class="bi bi-arrow-left"></i></a>
     </div>
-    <div class="icon icon-home">
+    <div class="p-2 text-center  ml-4 icon-home">
         <a href="/"><i class="bi bi-house-door"></i></a>
     </div>
-    <div class="icon icon-log">
-        <a href=""></a>
+    <div class="p-2 ml-auto text-center icon-log">
+        <a href="?c=connectUser">
+            <i class="bi bi-person"></i>
+        </a>
     </div>
 </nav>
 

@@ -17,39 +17,26 @@ body {
   font-size: 16px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 3.5rem auto 3rem;
+  grid-template-rows: 3.5rem auto 8rem;
 }
 
 nav {
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
+  /*padding: 0 2rem;*/
   height: 3.5rem;
   background: var(--color-black);
 }
 nav > .icon {
-  padding: .5rem;
   cursor: pointer;
   color: var(--color-white);
-  text-align: center;
   transform-origin: center;
   transform: scale(1);
   transition: transform .15s ease-in-out;
-}
-
-nav .icon a {
-  text-decoration: none;
-  color: inherit;
 }
 
 nav .icon:hover {
   transform: scale(1.4);
 }
 
-nav > .icon + .icon {
-  margin-left: 1rem;
-}
 
 .slider-nav-prev,
 .slider-nav-next {

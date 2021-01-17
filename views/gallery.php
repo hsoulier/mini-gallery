@@ -1,6 +1,4 @@
-<?php
-//var_dump($content);
-foreach ($content as $gallery): ?>
+<?php foreach ($content as $gallery): ?>
     <h1 class="text-center font-bold text-6xl mb-4"><?= $gallery->name ?></h1>
 <p class="text-center mb-8">
     <?= count($gallery->images) ?>&nbsp;photo(s) par
