@@ -1,4 +1,4 @@
-<?php foreach ($content as $user): ?>
+<?php foreach ($content["user"] as $user): ?>
     <h1 class="text-center text-6xl font-bold mb-4">Galerie de <?= $user->username ?></h1>
     <?php if (isset($_SESSION["islogged"])): ?>
         <button
@@ -30,16 +30,24 @@
         </div>
     </div>
 <?php endforeach; ?>
-
 <?php if (isset($_SESSION)): ?>
+
     <div class="create-new-gallery fixed bottom-0 right-0 mr-8 mb-12 w-4/5 md:w-96 hidden">
         <form method="post" action="" enctype="multipart/form-data"
               class="dropzone flex flex-col gap-2 bg-white rounded-lg shadow-md px-4 py-2 border-1 border-gray-400">
+            <label for="theme">Theme</label>
+
+            <select name="theme" id="theme">
+                <?php foreach ($content["themes"] as $theme): ?>
+                    <option value="<?= (string) $theme->_id?>"><?= $theme->name ?></option>
+                <?php endforeach; ?>
+            </select>
+            <input type="hidden" name="action" value="createGallery">
             <label for="name">Nom de la galerie</label>
             <input type="text" name="name" id="name" class="border rounded-sm px-1">
             <label for="desc">Description de la galerie</label>
             <textarea
-                    name="description"
+                    name="desc"
                     id="desc"
                     cols="30"
                     rows="4"

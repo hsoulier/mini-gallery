@@ -18,6 +18,9 @@ if (
     $data = $_GET;
     unset($data["c"]);
     if (!empty($_POST)) {
+        if (!empty($_FILES)) {
+            $controller = new $controller([$_POST, $_FILES]);
+        }
         $controller = new $controller($_POST);
     } else {
         $controller = new $controller($data);

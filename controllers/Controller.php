@@ -20,4 +20,13 @@ class Controller extends DbModel
         }
         return null;
     }
+
+    public function insert(array $data)
+    {
+        $bulk = new \MongoDB\Driver\BulkWrite();
+        $data["createdAt"] = new \MongoDB\BSON\UTCDateTime();
+        $id = $bulk->insert($data);
+        $result = parent::getManager()->executeBulkWrite("{$this->db}.{$this->coll}", $bulk);
+        return $id;
+    }
 }

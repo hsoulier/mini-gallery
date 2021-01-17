@@ -29,15 +29,13 @@ class ConnectUser extends Controller
     {
         $cursor = parent::getOne($this->form["email"], "email");
         if ($this->isEmptyObject($cursor)) {
-            $bulk = new \MongoDB\Driver\BulkWrite();
             $user = [
                 "username" => $this->form["user"],
                 "name" => $this->form["name"],
                 "email" => $this->form["email"],
-                "password" => crypt($this->form["pass"], HASH_SALT),
+                "password" => crypt($this->form["pass"], HASH_SALT)
             ];
-            $id = $bulk->insert($user);
-            $result = parent::getManager()->executeBulkWrite("{$this->db}.{$this->coll}", $bulk);
+            parent::insert($user);
             unset($_POST);
         }
     }
