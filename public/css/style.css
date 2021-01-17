@@ -12,6 +12,7 @@
 
 body {
   min-height: 100vh;
+  overflow-x: hidden;
   width: 100vw;
   font-size: 16px;
   display: grid;
@@ -48,4 +49,28 @@ nav .icon:hover {
 
 nav > .icon + .icon {
   margin-left: 1rem;
+}
+
+.slider-nav-prev,
+.slider-nav-next {
+  font-size:1.5rem ;
+  position: absolute;
+  top: 50%;
+  width: calc(var(--swiper-navigation-size)/ 44 * 27);
+  height: var(--swiper-navigation-size);
+  margin-top: calc(-1 * var(--swiper-navigation-size)/ 2);
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-nav-prev {
+  left: 10px;
+  right: auto;
+}
+.slider-nav-next {
+  right: 10px;
+  left: auto;
 }

@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text/css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="public/js/index.js" defer></script>
-    <link rel="stylesheet" href="public/css/style.css" type="text/css">
+    <link rel="stylesheet" href="public/css/style.css">
     <title>Mini Galerie</title>
 </head>
 
@@ -18,6 +20,9 @@
     </div>
     <div class="icon icon-home">
         <a href="/"><i class="bi bi-house-door"></i></a>
+    </div>
+    <div class="icon icon-log">
+        <a href=""></a>
     </div>
 </nav>
 
