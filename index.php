@@ -9,7 +9,6 @@ if (
 ) {
     require_once("controllers/Theme.php");
     $controller = new Theme();
-    $controller->render();
 } elseif (
     isset($_GET["c"]) and
     file_exists("controllers/" . ucfirst($_GET["c"]) . ".php")
@@ -19,7 +18,6 @@ if (
     $data = $_GET;
     unset($data["c"]);
     $controller = new $controller($data);
-    $controller->render();
 } else {
     require_once("views/404.php");
 }

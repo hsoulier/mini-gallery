@@ -2,7 +2,7 @@
 
 use MongoDB\Driver\Cursor;
 
-abstract class MongoModel
+abstract class DbModel
 {
     protected string $db = "gallery";
     protected \MongoDB\Driver\Manager $manager;
@@ -53,37 +53,19 @@ abstract class MongoModel
 
     /**
      * Get All Documents from the collection
+     * @param array $options
      * @return Cursor|null
      */
-    public function getAll(): ?Cursor
+    public function getAll(array $options = []): ?Cursor
     {
         try {
             return $this->manager->executeQuery(
                 "{$this->db}.{$this->coll}",
-                new MongoDB\Driver\Query([], [])
+                new MongoDB\Driver\Query([], $options)
             );
         } catch (\MongoDB\Driver\Exception\Exception $e) {
             echo $e->getMessage();
         }
         return null;
     }
-
-
 }
-
-// /**
-//  * Read the database
-//  * @param $filter
-//  * @param $option
-//  * @return Cursor|null
-//  */
-// public function requestData(array $filter, array $option): ?Cursor
-// {
-//   $read = new MongoDB\Driver\Query($filter, $option);
-//   try {
-//     return $this->manager->executeQuery("{$this->db}.{$this->coll}", $read);
-//   } catch (\MongoDB\Driver\Exception\Exception $e) {
-//     echo $e->getMessage();
-//   }
-//   return null;
-// }
