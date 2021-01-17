@@ -1,6 +1,6 @@
 <?php foreach ($content as $user): ?>
-    <h1 class="text-center text-6xl font-bold mb-4">Bienvenue <?= $user->username ?></h1>
-    <?php if (isset($_SESSION["user"])): ?>
+    <h1 class="text-center text-6xl font-bold mb-4">Galerie de <?= $user->username ?></h1>
+    <?php if (isset($_SESSION["islogged"])): ?>
         <button
                 class="btn-new-gallery mx-auto block px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-black rounded-full shadow ripple waves-light hover:shadow-lg focus:outline-none hover:bg-black mb-8">
             Créer une nouvelle
@@ -36,7 +36,7 @@
         <form method="post" action="" enctype="multipart/form-data"
               class="dropzone flex flex-col gap-2 bg-white rounded-lg shadow-md px-4 py-2 border-1 border-gray-400">
             <label for="name">Nom de la galerie</label>
-            <input type="text" name="name" id="name" class="border rounded-sm px-1" value="Test">
+            <input type="text" name="name" id="name" class="border rounded-sm px-1">
             <label for="desc">Description de la galerie</label>
             <textarea
                     name="description"

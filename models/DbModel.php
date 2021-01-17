@@ -36,14 +36,15 @@ abstract class DbModel
     /**
      * Get a Document by Id from a collection
      * @param $id
+     * @param string $selector
      * @return Cursor|null
      */
-    public function getOne($id): ?Cursor
+    public function getOne($id, string $selector = "_id"): ?Cursor
     {
         try {
             return $this->manager->executeQuery(
                 "{$this->db}.{$this->coll}",
-                new MongoDB\Driver\Query(["_id" => $id], [])
+                new MongoDB\Driver\Query([$selector => $id], [])
             );
         } catch (\MongoDB\Driver\Exception\Exception $e) {
             echo $e->getMessage();

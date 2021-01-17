@@ -22,10 +22,13 @@
         <a href="/"><i class="bi bi-house-door"></i></a>
     </div>
     <div class="p-2 ml-auto text-center icon-log">
-        <a href="?c=connectUser">
+        <a href="?c=user">
             <i class="bi bi-person"></i>
         </a>
     </div>
+    <?php if(isset($_SESSION["islogged"])): ?>
+        <a href="?c=user&action=logout" class="text-white">log out</a>
+    <?php endif; ?>
 </nav>
 
 <main class="container p-8 mx-auto">
